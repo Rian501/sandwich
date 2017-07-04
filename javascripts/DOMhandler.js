@@ -31,9 +31,7 @@ vegChooser.addEventListener("change", function(event) {
 	let selectedToppingPrice = SandwichMaker.addVeg(selectedTopping);
 	SandwichMaker.addTopping(selectedToppingPrice);
 		displayPrice ();
-
-})
-
+});
 
 breadChooser.addEventListener("change", function(event) {
   selectedTopping = event.target.value;
@@ -41,7 +39,6 @@ breadChooser.addEventListener("change", function(event) {
   console.log(selectedToppingPrice);
   SandwichMaker.addTopping(selectedToppingPrice);
   	displayPrice ();
-
 });
 
 cheeseChooser.addEventListener("change", function(event) {
@@ -50,7 +47,6 @@ cheeseChooser.addEventListener("change", function(event) {
   console.log(selectedToppingPrice);
   SandwichMaker.addTopping(selectedToppingPrice);
   	displayPrice ();
-
 });
 
 condChooser.addEventListener("change", function(event) {
@@ -58,7 +54,7 @@ condChooser.addEventListener("change", function(event) {
 	let selectedToppingPrice = SandwichMaker.addCond(selectedTopping);
 	SandwichMaker.addTopping(selectedToppingPrice);
 	displayPrice ();
-})
+});
 
 
 function displayPrice () {
@@ -67,5 +63,4 @@ function displayPrice () {
 	priceToDisplay = priceToDisplay.toFixed(2);
 	console.log("total?", SandwichMaker.returnTotal());
 	priceOutput.innerHTML = `<h3>$${priceToDisplay}</h3>`;
-
-}
+};
