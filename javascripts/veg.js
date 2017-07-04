@@ -1,13 +1,29 @@
 var SandwichMaker = (function(maker) {
 
   var vegPrices = {
+  	"lettuce": 0.25,
+  	"tomato": .25,
+  	"onion": .35,
+  	"pickles": .45,
+  	"olives": .35
   };
 
-  // Augment the original object with another method
-  maker.addVeg = function() {
-    //return ???;
+  maker.addVeg = function(selected) {
+    return vegPrices[selected];
   };
 
-  // Return the new, augmented object with the new method on it
+  maker.getVegList = function() {
+  	return Object.keys(vegPrices);
+  };
+
+  let vegBoxes = '';
+  maker.vegBoxesMkr = function() {
+  	let vegOptions = maker.getVegList();
+  	vegOptions.forEach(function(element) {
+  		vegBoxes += `<input type="checkbox" id="${element}" name="veggies" value="${element}">
+			<label for="${element}">${element}</label>`
+  	});
+  	return vegBoxes;
+  }
   return maker;
 })(SandwichMaker || {});

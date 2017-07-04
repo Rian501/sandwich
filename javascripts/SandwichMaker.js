@@ -6,7 +6,11 @@ var SandwichMaker = (function(maker) {
   // Return the public interface that other code can interact with
     maker.addTopping = function(toppingPrice) {
       totalPrice += toppingPrice;
-    console.log("total price?", totalPrice);
+      return totalPrice;
     };
+
+    maker.returnTotal = function() {
+    	return totalPrice;
+    }
   return maker;
 })(SandwichMaker || {});
